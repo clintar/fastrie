@@ -4,11 +4,10 @@
 #include <stdio.h>
 #include <cstring>
 #include <sys/time.h>
-#include <atomic>
 #define MAX_TRANSACTIONS	(4096)
 
 // miner version string (for pool statistic)
-char* minerVersionString = "xptMiner 1.6dga";
+char* minerVersionString = "xptMiner 1.7dga";
 
 minerSettings_t minerSettings = {0};
 
@@ -70,7 +69,7 @@ struct
 	uint32	txHashCount;
 }workDataSource;
 
-std::atomic<uint32_t> uniqueMerkleSeedGenerator;
+uint32_t uniqueMerkleSeedGenerator;
 uint32 miningStartTime = 0;
 
 /*
@@ -924,7 +923,7 @@ sysctl(mib, 2, &numcpu, &len, NULL, 0);
 	minerSettings.protoshareMemoryMode = commandlineInput.ptsMemoryMode;
 	minerSettings.useGPU = commandlineInput.useGPU;
 	printf("\xC9\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xBB\n");
-	printf("\xBA  xptMiner/ric/dga (v1.6d-b10)                    \xBA\n");
+	printf("\xBA  xptMiner/ric/dga (v1.6d-b11)                    \xBA\n");
 	printf("\xBA  author: jh00 (xptminer) dga (ric core)          \xBA\n");
 	printf("\xBA  http://ypool.net                                \xBA\n");
 	printf("\xC8\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xBC\n");
