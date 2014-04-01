@@ -1,6 +1,7 @@
 #include"global.h"
 #include <chrono>
 #include "updater.h"
+#include <math.h>
 
 #define zeroesBeforeHashInPrime	8
 
